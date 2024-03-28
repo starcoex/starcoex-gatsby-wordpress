@@ -30,6 +30,7 @@ interface IPageTemplateProps {
 }
 
 export default function PageTemplate({ data }: IPageTemplateProps) {
+  console.log(data);
   const imageDate = getImage(data.wpPage?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData!);
   return (
     <Layout>
@@ -56,7 +57,7 @@ export default function PageTemplate({ data }: IPageTemplateProps) {
   );
 }
 
-export const query = graphql`
+export const pageQuery = graphql`
   query PageData($id: String) {
     wpPage(id: { eq: $id }) {
       id
@@ -103,3 +104,7 @@ export const query = graphql`
     }
   }
 `;
+
+type TypeData = {
+  wpPage: { wpChildren: {}; wpParent: {} };
+};

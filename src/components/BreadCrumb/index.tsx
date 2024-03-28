@@ -3,11 +3,10 @@ import { Wrapper } from "../../styles/BreadCrumb.style";
 import { Link } from "gatsby";
 
 interface IBreadCrumbProps {
-  parent: any;
+  parent: { uri: string; title: string };
 }
 
 export default function BreadCrumb({ parent }: IBreadCrumbProps) {
-  console.log(parent);
   return (
     <Wrapper>
       <Link to="/">
@@ -17,12 +16,11 @@ export default function BreadCrumb({ parent }: IBreadCrumbProps) {
       {parent ? (
         <>
           <Link to={parent.uri}>
-            <span dangerouslySetInnerHTML={{ __html: parent.title! }} />
+            <span dangerouslySetInnerHTML={{ __html: parent.title }} />
           </Link>
-          <span>/</span>
+          <span> /</span>
         </>
       ) : null}
-      <p>BreadCrumb</p>
     </Wrapper>
   );
 }
