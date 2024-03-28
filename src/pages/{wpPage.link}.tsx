@@ -30,7 +30,6 @@ interface IPageTemplateProps {
 }
 
 export default function PageTemplate({ data }: IPageTemplateProps) {
-  console.log(data);
   const imageDate = getImage(data.wpPage?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData!);
   return (
     <Layout>
@@ -50,8 +49,6 @@ export default function PageTemplate({ data }: IPageTemplateProps) {
             <div dangerouslySetInnerHTML={{ __html: data.wpPage?.content! }} />
           </PageContent>
         </ContentWrapper>
-
-        <p>Content</p>
       </Wrapper>
     </Layout>
   );

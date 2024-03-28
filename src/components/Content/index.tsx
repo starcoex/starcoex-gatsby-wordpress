@@ -17,7 +17,6 @@ export default function Content({ image, link, text }: IContentProps) {
           <ContentImgText>{text}</ContentImgText>
         </ContentImgTextWrapper>
       </Link>
-      <p>content</p>
     </ContentImg>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useAboutQuery } from "../../hooks/useAboutQuery";
-import { AboutImg, AboutWrapper } from "../../styles/Abotu.style";
+import { AboutImg, AboutWrapper } from "../../styles/About.style";
 
 export default function About() {
   const { wpPage } = useAboutQuery();
