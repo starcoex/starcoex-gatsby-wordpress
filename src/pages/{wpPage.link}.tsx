@@ -33,13 +33,18 @@ export default function PageTemplate({ data }: IPageTemplateProps) {
   const imageDate = getImage(data.wpPage?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData!);
   return (
     <Layout>
-      {data.wpPage?.featuredImage ? <PageHero image={imageDate} /> : null}
+      {data.wpPage?.featuredImage! ? <PageHero image={imageDate!} /> : null}
       <Wrapper>
-        <BreadCrumb parent={data.wpPage?.wpParent && data.wpPage?.wpParent?.node} />
+        <BreadCrumb
+          //@ts-ignore
+          parent={data.wpPage?.wpParent && data.wpPage?.wpParent?.node}
+        />
         <ContentWrapper>
           <PageSideBar
+            //@ts-ignore
             parentChildren={data.wpPage?.wpParent && data.wpPage?.wpParent?.node?.wpChildren?.nodes!}
             currentPage={data.wpPage}
+            //@ts-ignore
             parent={data.wpPage?.wpParent && data.wpPage?.wpParent?.node?.title}
           >
             {data.wpPage?.wpChildren}
