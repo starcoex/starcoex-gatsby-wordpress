@@ -9,7 +9,7 @@ FROM node:latest
 COPY ./package.json /gatsby-wp/
 COPY ./package-lock.lock /gatsby-wp/
 WORKDIR /gatsby-wp/
-RUN npm install
+RUN npm install --force
 
 COPY . /gatsby-wp/
 
