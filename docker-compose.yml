@@ -1,6 +1,17 @@
 version: "3.3"
 
 services:
+  gatsby-wp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/gatsby-wp
+      - /app/node_modules/
+
   wordpress:
     depends_on:
       - db
